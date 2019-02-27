@@ -5,6 +5,10 @@ var dir = "right";
 var snakeW = 10;
 var snakeH = 10;
 var newHead;
+var up = document.getElementById('up');
+var left = document.getElementById('left');
+var right = document.getElementById('right');
+var down = document.getElementById('down');
 function drawSnake(x,y){
   ctx.fillStyle = "red";
   ctx.fillRect(x*snakeW,y*snakeW,snakeW,snakeH);
@@ -21,12 +25,34 @@ for(var i=len-1;i>=0;i--){
     y:0
   })
 }
+
+
+left.onclick = function(){
+  if (dir!="right") {
+    dir="left";
+  }
+}
+right.onclick = function(){
+  if (dir!="left") {
+    dir="right";
+  }
+}
+up.onclick = function(){
+  if (dir!="down") {
+    dir="up";
+  }
+}
+down.onclick = function(){
+  if (dir!="up") {
+    dir="down";
+  }
+}
 document.addEventListener("keydown",dirControl);
 function dirControl(e){
-  if(e.keyCode==37 && dir!="right"){dir="left"}
-  else if(e.keyCode==38 && dir!="down"){dir="up"}
-  else if(e.keyCode==39 && dir!="left"){dir="right"}
-  else if(e.keyCode==40 && dir!="up"){dir="down"}
+  if((e.keyCode==37 || left.clicked == true)&& dir!="right"){dir="left"}
+  else if((e.keyCode==38 || up.clicked == true) && dir!="down"){dir="up"}
+  else if((e.keyCode==39 || right.clicked == true)&& dir!="left"){dir="right"}
+  else if((e.keyCode==40 || down.clicked == true)&& dir!="up"){dir="down"}
 }
 
 //create food
