@@ -55,7 +55,9 @@ function draw(){
   var snakeX = snake[0].x;
   var snakeY = snake[0].y;
 
-  if(snakeX<0){snakeX = cvs.width/snakeW}
+
+
+  if(snakeX<0){snakeX = cvs.width/snakeW} //
   else if(snakeY<0){snakeY = cvs.height/snakeH}
   else if(snakeX>cvs.width/snakeW){snakeX = 0}
   else if(snakeY>cvs.height/snakeH){snakeY = 0}
@@ -87,5 +89,8 @@ function draw(){
   }
   snake.unshift(newHead);
 }
-
 setInterval(draw,100);
+// if (snakeX == 0 && snakeY == 0) {
+//   clearInterval(draw);
+//   alert("Game Over");
+// }
