@@ -115,7 +115,7 @@ function draw(){
   }
   snake.unshift(newHead);
 }
-setInterval(draw,100);
+setInterval(draw,140);
 // if (snakeX == 0 && snakeY == 0) {
 //   clearInterval(draw);
 //   alert("Game Over");
