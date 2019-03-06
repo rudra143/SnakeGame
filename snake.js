@@ -81,12 +81,15 @@ function draw(){
   var snakeX = snake[0].x;
   var snakeY = snake[0].y;
 
+  if (snakeX<0 || snakeY<0 || snakeX>cvs.width/10-1 || snakeY>cvs.height/snakeH-1) {
+    alert('Game Over');
+    location.reload();
+  }
 
-
-  if(snakeX<0){snakeX = cvs.width/snakeW} //
-  else if(snakeY<0){snakeY = cvs.height/snakeH}
-  else if(snakeX>cvs.width/snakeW){snakeX = 0}
-  else if(snakeY>cvs.height/snakeH){snakeY = 0}
+  //if(snakeX<0){snakeX = cvs.width/snakeW} //
+  //else if(snakeY<0){snakeY = cvs.height/snakeH}
+  //else if(snakeX>cvs.width/snakeW){snakeX = 0}
+  //else if(snakeY>cvs.height/snakeH){snakeY = 0}
 
   if(dir=="right"){snakeX++}
   else if(dir=="left"){snakeX--}
