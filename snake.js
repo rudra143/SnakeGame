@@ -83,7 +83,7 @@ function draw(){
 
   if (snakeX<0 || snakeY<0 || snakeX>cvs.width/10-1 || snakeY>cvs.height/snakeH-1) {
     alert('Game Over');
-    window.location.reload
+    window.location.reload();
   }
 
   //if(snakeX<0){snakeX = cvs.width/snakeW} //
